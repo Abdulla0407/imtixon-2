@@ -1,0 +1,22 @@
+// all container's style
+.container {
+    max-width: 1106px;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+@media only screen and (max-width:768px) {
+    .container {
+        max-width: 689px;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .container {
+        max-width: 311px;
+    }
+}

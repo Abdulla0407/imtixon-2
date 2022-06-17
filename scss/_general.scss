@@ -1,0 +1,72 @@
+@import "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost';
+    transition: all 0.2s;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+// sticky footer
+
+header {
+    flex-shrink: 1;
+}
+
+main {
+    flex-shrink: 1;
+}
+
+footer {
+    flex-shrink: 1;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+section {
+    margin-bottom: 160px;
+}
+
+::selection {
+    background-color: $yellow;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+// button styles
+
+.button {
+    @include button;
+}
+
+.button:hover {
+    @include button-hover;
+}
+
+.button:active {
+    @include button-active;
+}

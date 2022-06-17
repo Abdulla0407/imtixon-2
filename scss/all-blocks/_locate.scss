@@ -1,0 +1,119 @@
+// locate sections
+
+.locate {
+
+    &__list {
+        width: 1110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 350px;
+        margin-bottom: 30px;
+    }
+
+    // before lines
+
+    &__item::before {
+        content: "";
+        position: absolute;
+        width: 344px;
+        margin-top: 40px;
+        margin-left: -290px;
+        z-index: -1;
+        border: 10px solid #E5ECF4;
+    }
+
+    &__item+&__item {
+        margin-left: 30px;
+    }
+
+    &__item:nth-child(3n+1) {
+        margin-left: 0;
+    }
+
+    // before images
+
+    // n+1 child's added for testing with add items
+
+    &__item:nth-child(1n+1)>&__wrapper::before {
+        content: url(/images/Locate.svg);
+    }
+
+    &__item:nth-child(2n+2)>&__wrapper::before {
+        content: url(/images/Pick.svg);
+    }
+
+    &__item:nth-child(3n+3)>&__wrapper::before {
+        content: url(/images/Enjoy.svg);
+    }
+
+    &__heading {
+        padding-top: 40px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 27px;
+        @include small-text;
+        color: $dark-navy;
+    }
+
+    &__info {
+        @include main-text;
+    }
+}
+
+// locate-tablet
+@media only screen and (max-width:768px) {
+
+    .locate {
+
+        & {
+            margin-bottom: 145px;
+        }
+
+        &__list {
+            width: 573px;
+            margin: auto;
+        }
+
+        &__item {
+            width: 573px;
+            margin-bottom: 40px;
+        }
+
+        &__item+&__item {
+            margin-left: 0px;
+        }
+
+        &__item>&__wrapper::before {
+            position: absolute;
+            left: 99px;
+        }
+
+        &__item::before {
+            position: absolute;
+            margin-top: -100px;
+            margin-left: -35px;
+            left: 0;
+            transform: rotateZ(90deg);
+        }
+
+        &__wrapper {
+            width: 573px;
+            padding-left: 175px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__heading {
+            padding-top: 0;
+            width: 398px;
+        }
+    }
+}

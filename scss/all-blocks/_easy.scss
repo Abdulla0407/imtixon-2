@@ -1,0 +1,171 @@
+// easy section
+
+.easy {
+
+    & {
+        margin-bottom: 200px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__element {
+        margin-bottom: 160px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__element:nth-child(2n+2) {
+        flex-direction: row-reverse;
+    }
+
+    &__element:last-child {
+        margin-bottom: 0;
+    }
+
+    // after arrows and circles
+
+    &__element:nth-child(1)::after {
+        content: url(/images/arrow.svg);
+        position: absolute;
+        right: 0;
+        margin-top: 310px;
+    }
+
+    &__element:nth-child(1)>&__img::after {
+        content: url(/images/Circle.svg);
+        position: absolute;
+        right: 0;
+    }
+
+    &__element:nth-child(2n+2)::after {
+        content: url(/images/arrow.svg);
+        position: absolute;
+        transform: rotateY(180deg);
+        left: 0;
+        margin-top: -290px;
+        margin-left: -415px;
+    }
+
+    &__element:nth-child(2n+2)>&__img::after {
+        content: url(/images/Circle.svg);
+        position: absolute;
+        transform: rotateY(180deg);
+        left: 0;
+    }
+
+    &__element:nth-child(3)::after {
+        content: url(/images/small-arrow.svg);
+        position: absolute;
+        right: 0;
+        margin-top: -130px;
+    }
+
+    &__element:nth-child(3)>&__img::after {
+        content: url(/images/Circle.svg);
+        position: absolute;
+        right: 0;
+    }
+
+    
+    // arrows and lines is end
+    
+
+    &__wrapper {
+        width: 445px;
+    }
+
+    &__wrapper>div {
+        display: flex;
+    }
+
+    &__heading {
+        margin-bottom: 24px;
+        @include big-text;
+        color: $dark-navy;
+    }
+
+    &__info {
+        margin-bottom: 40px;
+        @include main-text;
+        color: $dim-grey;
+    }
+
+    &__btn {
+        padding: 14px 44px;
+    }
+
+    &__img {
+        border-radius: 50%;
+    }
+}
+
+// easy tablet
+@media only screen and (max-width:768px) {
+
+    .easy {
+
+        & {
+            margin-bottom: 104px;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__list {
+            width: 573px;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+        }
+
+        &__element {
+            margin-bottom: 128px;
+            flex-direction: column-reverse;
+        }
+
+        &__element:nth-child(2n+2) {
+            flex-direction: column-reverse;
+        }
+
+        // fixing arrow for tablet
+
+        &__element:nth-child(1)::after {
+            transform: translateY(-310px);
+        }
+
+        &__element:nth-child(2n+2)::after {
+            content: url(/images/reversed-arrow.svg);
+            transform: rotate(0deg) translate(30px, -610px);
+        }
+
+        &__element:nth-child(3)::after {
+            content: url(/images/small-arrow.svg);
+            position: absolute;
+            right: 0;
+            margin-top: 0;
+            transform: translateY(-530px);
+        }
+
+        &__wrapper {
+            width: 573px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        &__heading {
+            width: 457px;
+            margin-bottom: 40px;
+        }
+
+    }
+}

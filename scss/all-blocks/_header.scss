@@ -1,0 +1,173 @@
+// Header section's style
+
+.header {
+
+    & {
+        position: sticky;
+        top: -1px;
+        z-index: 10;
+        background-color: white;
+    }
+
+    &__container {
+        padding: 22px 0px 21.5px 0px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__left {
+        margin-right: 58px;
+    }
+
+    &__burger {
+        display: none;
+    }
+
+    &__nav {
+        margin-right: 509px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item+&__item {
+        margin-left: 32px;
+    }
+
+    &__link {
+        @include normal-text;
+        color: $dim-grey;
+    }
+
+    &__link:hover {
+        color: $yellow;
+    }
+
+    &__link:active {
+        color: $dark-navy;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__button {
+        padding: 13.5px 38px;
+    }
+
+}
+
+// header-tablet
+@media only screen and (max-width:768px) {
+
+    .header {
+
+        &__nav {
+            margin-right: 94px;
+        }
+
+    }
+}
+
+// burger menu
+@media only screen and (max-width:660px) {
+    .header {
+
+        .header__container {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        &__burger {
+            display: block;
+            background-color: transparent;
+            border: none;
+            margin-right: 99px;
+            z-index: 2;
+        }
+
+        &__close {
+            display: none;
+        }
+
+        .header__list {
+            display: none;
+        }
+
+        .header__right {
+            display: none;
+        }
+
+    }
+
+    .burger--menu {
+
+
+        .header__close {
+            display: block;
+        }
+
+        .header__open {
+            display: none;
+        }
+
+        .header__right {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 65%;
+            height: 90.5vh;
+            background-color: #333A44;
+            top: 65px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+// mobile header
+@media only screen and (max-width:375px) {
+    .header {
+
+        &__left {
+            margin-right: 0px;
+        }
+
+        &__nav {
+            margin-bottom: 339px;
+        }
+
+        .header__list {
+            margin-top: 64px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            margin-bottom: 24px;
+        }
+
+        &__item:last-child {
+            margin-bottom: 0;
+        }
+
+        &__item+&__item {
+            margin-left: 0px;
+        }
+
+        &__link {
+            @include normal-text;
+            font-size: 18px;
+            color: $light-grey;
+        }
+
+    }
+}

@@ -1,0 +1,178 @@
+// footer sections
+
+.footer {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    // footer top
+
+    &__top {
+        background-color: $dark-navy;
+        padding: 102px 130px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // footer circles images
+
+    &__top::after {
+        content: url(/images/footer__circles.svg);
+        margin-top: 40px;
+        right: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__sign {
+        z-index: 2;
+        width: 415px;
+        @include big-text;
+        color: white;
+    }
+
+    // play market and app store buttons
+
+    &__buttons {
+        width: 359px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+    }
+
+    &__buttons>a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        background-color: $light-grey;
+        padding: 8px 15px;
+    }
+
+    &__buttons>a:hover {
+        cursor: pointer;
+    }
+
+    &__buttons>a:active {
+        transform: scale(0.95, 0.95);
+    }
+
+    &__buttons>a>img {
+        margin-right: 11px;
+    }
+
+    &__button-name {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: -0.446429px;
+        color: $dark-navy;
+    }
+
+    &__button-info {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.892857px;
+        color: $dark-navy;
+    }
+
+    
+    //     footer top is end
+    
+
+
+    // footer bottom
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        background-color: #333A44;
+        padding: 33px 130px;
+    }
+
+    &__bottom-left {
+        margin-right: 58px;
+    }
+
+    &__bottom-middle {
+        margin-right: 571px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item+&__item {
+        margin-left: 32px;
+    }
+
+    &__link {
+        @include normal-text;
+        color: $dim-grey;
+    }
+
+    &__link:hover {
+        color: $yellow;
+    }
+
+    &__link:active {
+        color: $light-grey;
+    }
+
+
+    &__web-list {
+        display: flex;
+    }
+
+    &__web-item+&__web-item {
+        margin-left: 24px;
+    }
+
+    &__web-link>i {
+        font-size: 24px;
+        color: $yellow;
+    }
+
+    &__web-link>i:hover {
+        color: $light-grey;
+    }
+}
+
+// footer tablet 
+@media only screen and (max-width:768px) {
+
+    .footer {
+
+        &__top {
+            flex-direction: column;
+            align-items: center;
+            padding: 62px 156px;
+        }
+
+        &__top::after {
+            margin-top: 95px;
+        }
+
+        &__sign {
+            width: 457px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        &__bottom {
+            padding: 35px 40px 32px 39px;
+        }
+
+        &__bottom-middle {
+            margin-right: 153px;
+        }
+    }
+}
+

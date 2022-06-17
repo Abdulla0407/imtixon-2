@@ -1,0 +1,149 @@
+// hero section's style
+
+.hero {
+
+    & {
+        background-image: url(/images/hero-img.png);
+        z-index: 1;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    // 2x size photo for retina displays
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+
+        & {
+            background-image: url(/images/hero-img@2x.png);
+        }
+    }
+
+    &::before {
+        content: "";
+        left: 0;
+        right: 0;
+        z-index: -1;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #2F3B59;
+        mix-blend-mode: normal;
+        opacity: 0.75;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 267px 0px 0px;
+    }
+
+    &__top {
+        padding-top: 153px;
+        margin-bottom: 40px;
+    }
+
+    &__heading {
+        width: 500px;
+        @include large-text;
+        color: white;
+    }
+
+    // before and after arrows
+
+    &__bottom::before {
+        content: url(/images/before-arrow.svg);
+        position: absolute;
+        left: -45px;
+        top: 53.5%;
+    }
+
+    &__bottom {
+        width: 405px;
+        margin-left: 97px;
+        padding-bottom: 152px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__bottom::after {
+        content: url(/images/after-arrow.svg);
+        position: absolute;
+        margin-left: 45px;
+        left: 46%;
+        top: 53.5%;
+    }
+
+    &__info {
+        width: 405px;
+        margin-bottom: 40px;
+        @include main-text;
+        color: white;
+    }
+
+    &__button-wrapper {
+        display: flex;
+    }
+
+    &__button {
+        padding: 14px 39px;
+    }
+}
+
+// hero-tablet
+@media only screen and (max-width:768px) {
+
+    .hero {
+
+        & {
+            margin-bottom: 116px;
+            background-size: cover;
+            background-position: -490px;
+        }
+
+        &__container {
+            padding: 0px 98px 0px 97px;
+        }
+
+        &__top {
+            padding-top: 137px;
+            margin-bottom: 24px;
+            width: 573px;
+            align-self: center;
+            justify-content: center;
+            text-align: center;
+            display: flex;
+        }
+
+        &__heading {
+            width: 573px;
+        }
+
+        &__bottom::before {
+            display: none;
+        }
+
+        &__bottom {
+            width: 573px;
+            align-self: center;
+            margin-left: 0;
+            align-items: center;
+            padding-bottom: 217px;
+        }
+
+        &__bottom::after {
+            left: 0;
+            margin-left: 0px;
+            top: 73.5%;
+        }
+
+        &__info {
+            width: 573px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+    }
+}
+

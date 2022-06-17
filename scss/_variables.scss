@@ -1,0 +1,82 @@
+// Colors variables
+$yellow: #FCB72B;
+$dark-navy: #495567;
+$dim-grey: #939CAA;
+$light-grey: #E5ECF4;
+$snow: #F2F5F9;
+$ligh-yellow: #FFF4DF;
+
+
+// text styles
+
+@mixin large-text {
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -2.5px;
+}
+
+@mixin big-text {
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -2.14286px;
+}
+
+@mixin normal-text {
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+@mixin regular-text {
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1.78571px;
+}
+
+@mixin small-text {
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -1.07143px;
+}
+
+@mixin main-text {
+    font-family: 'Lexend Deca';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    color: #495567;
+}
+
+// button styles
+
+@mixin button {
+    border: 2px solid $yellow;
+    background: $yellow;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: all 0.3s;
+}
+
+@mixin button-hover {
+    color: $yellow;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@mixin button-active {
+    transform: scale(0.95, 0.95);
+}
